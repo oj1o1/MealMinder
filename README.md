@@ -26,6 +26,7 @@ Daily Nutrition and calories Tracking
 Users can log their daily food intake, whether it's from prepared recipes, restaurant meals, or snacks
 
 MealMinder provides instant nutritional analysis, helping users understand their daily caloric and nutrient intake
+
 Progress Monitoring
 -
 MealMinder offers a visual representation of users' progress over time, including changes in weight, body measurements,
@@ -36,6 +37,7 @@ Goal Achievement
 Users can set specific health and fitness goals, such as weight loss milestones or body composition targets MealMinder
 guides them in achieving these goals through personalized meal plans
 # Flowchart
-![image](https://github.com/oj1o1/MealMinder/assets/122396350/0d032ea5-9b69-4111-a702-45d88b23bc0d)
+![image](https://github.com/oj1o1/MealMinder/assets/122396350/68c206de-a405-4545-955b-e0ca5a7a0880)
+
 
 
