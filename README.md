@@ -1,7 +1,7 @@
 # MealMinder
 
 
- mealUser Registration and Profile Setup
+ User Registration and Profile Setup
 -
 Allows user to create an account or log in to an existing one to personalize their experience Users can set up
 their profile with details such as age, weight, height, activity level, and goals (e g weight loss, maintenance, or
@@ -37,6 +37,12 @@ Users can set specific health and fitness goals, such as weight loss milestones 
 guides them in achieving these goals through personalized meal plans
 # Flowchart
 ![image](https://github.com/oj1o1/MealMinder/assets/122396350/68c206de-a405-4545-955b-e0ca5a7a0880)
+# Output 
+![image](https://github.com/oj1o1/MealMinder/assets/122396350/4440d214-97b5-4424-9540-ce71132f3e03)
+![image](https://github.com/oj1o1/MealMinder/assets/122396350/90594756-e7eb-40e1-b199-f4b70ff8b8ff)
+
+
+
 
 
 
