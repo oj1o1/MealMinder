@@ -1,7 +1,7 @@
 # MealMinder
 
 
-User Registration and Profile Setup
+ mealUser Registration and Profile Setup
 -
 Allows user to create an account or log in to an existing one to personalize their experience Users can set up
 their profile with details such as age, weight, height, activity level, and goals (e g weight loss, maintenance, or
@@ -22,7 +22,7 @@ goals Whether it's weight management, muscle building, or a specific diet
 
 Daily Nutrition and calories Tracking
 -
-Users can log their daily food intake, whether it's from prepared recipes, restaurant meals, or snacks
+Users can log their daily food intake, whether it's from prepared recipes, restaurants, or snacks
 
 MealMinder provides instant nutritional analysis, helping users understand their daily caloric and nutrient intake
 
