@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Meal</title>
+
+    <style>
+        /* style.css */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: yellowgreen;
+            animation: neonGlow 2s infinite;
+            font-weight: 700;
+        }
+
+        body {
+            background-color: rgb(10, 37, 41);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .return-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF;
+
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .return-button:hover {
+            margin-left: 10px;
+            background-color: #007BFF;
+            box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF, 0 0 25px #007BFF;
+        }
+
+        form {
+            background-color: rgb(10, 37, 41);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: white;
+        }
+
+        @keyframes neonGlow {
+            0% {
+                text-shadow: 0 0 5px yellowgreen, 0 0 20px yellowgreen, 0 0 30px yellowgreen;
+            }
+
+            50% {
+                text-shadow: 0 0 10px yellowgreen, 0 0 40px yellowgreen, 0 0 60px yellowgreen;
+            }
+
+            100% {
+                text-shadow: 0 0 5px yellowgreen, 0 0 20px yellowgreen, 0 0 30px yellowgreen;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>ADD MEAL YOU ATE</h2>
+    <form method="POST" action="{{ url_for('add_meal') }}">
+        <label for="food">Food:</label>
+        <input type="text" name="food" required>
+
+        <label for="calories">Calories:</label>
+        <input type="number" name="calories" required min="1" oninput="validity.valid||(value='');">
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" required min="1" oninput="validity.valid||(value='');">
+
+        <input type="submit" value="Add Meal">
+    </form>
+    <br>
+    <a href="{{ url_for('view_meal_logs') }}">View Meal Logs</a>
+    <a href="/" class="return-button">Return</a>
+</body>
+
+</html>

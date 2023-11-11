@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Logs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/view_meal_logs.css">
+
+</head>
+
+<body>
+
+    <section class="Analytics">
+        <h1>Meal Logs</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Calories</th>
+                    <th>Quantity</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in user_logs %}
+                <tr>
+                    <td>{{ log['food'] }}</td>
+                    <td>{{ log['calories'] }}</td>
+                    <td>{{ log['quantity'] }}</td>
+                    <td>{{ log['timestamp'].strftime('%Y-%m-%d %H:%M:%S')}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="return-button">Return</a>
+
+        <div class="chart-container">
+            <div class="chart-box">
+                <canvas id="pieChart" style="height: 200px; width: 200px;"></canvas> <!-- Smaller size -->
+            </div>
+
+            <div class="chart-box">
+                <canvas id="lineChart" style="height: 200px; width: 200px;"></canvas> <!-- Smaller size -->
+            </div>
+        </div>
+
+        <script>
+            var pieChartData = {
+                labels: {{ pie_chart_data['labels'] | tojson }},
+            datasets: [{
+                data: {{ pie_chart_data['data'] | tojson }},
+                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FDB45C", "#77DD77", "#FFD700", "#D2B48C"]
+            }]
+        };
+
+
+            var lineChartData = {
+                labels: {{ line_chart_data['labels'] | tojson }},
+            datasets: [{
+                label: 'Calories Consumed',
+                data: {{ line_chart_data['data'] | tojson }},
+                borderColor: "#3e95cd",
+                fill: false
+            }]
+        };
+            var pieChartCanvas = document.getElementById('pieChart').getContext('2d');
+            var pieChart = new Chart(pieChartCanvas, {
+                type: 'pie',
+                data: pieChartData,
+            });
+
+
+            var lineChartCanvas = document.getElementById('lineChart').getContext('2d');
+            var lineChart = new Chart(lineChartCanvas, {
+                type: 'line',
+                data: lineChartData,
+            });
+        </script>
+
+    </section>
+
+</body>
+
+</html>

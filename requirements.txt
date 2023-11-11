@@ -1,0 +1,7 @@
+tf2onnx
+scikit-learn
+Flask-Login
+onnxruntime
+pandas
+numpy
+Flask

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealMinder</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel="stylesheet" href="/static/meal_planner.css">
+
+
+
+</head>
+<script src="//code.tidio.co/ntk365ejgqbs9hkueaauhism8vzph2jv.js" async></script>
+
+    <header class="header">
+        <a href="/" class="logo">MealMinder <span class="animate" style="--i:1;"></span></a>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#MealPlanner">MealPlanner</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#contact">Contact Us</a>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+
+    </header>
+
+<section class="home show-animate" id="home">
+
+    <div class="home-content">
+
+        <h1>Fuel Your Body, Nourish Your Soul. <span class="animate" style="--i:2;"></span></h1>
+        <div class="text-animate">
+            <h3>PLAN YOUR DIET </h3>
+            <span class="animate" style="--i:3;"></span>
+        </div>
+        {% if current_user.is_authenticated %}
+        <p>Hello, {{ current_user.username }}!<span class="animate" style="--i:4;"></span></p>
+        {% else %}
+        {% endif %}
+
+
+
+
+        <p class="an1">Embark on a transformative journey with our personalized Diet Plans. Crafted with precision and
+            backed by cutting-edge analytics, our plans are tailored to help you achieve your health and fitness goals.
+            Get started now and take the first step towards a healthier, happier you. Your path to success begins here.
+            <span class="animate" style="--i:4;"></span>
+        </p>
+
+
+        <div class="btn-box">
+            <a href="/add_meal" class="explore">
+                <i></i><i></i>
+                <span>Add Meal</span>
+
+            </a>
+            <a href="{{ url_for('logout') }}" class="explore">
+                <i></i><i></i>
+                <span>Log Out</span>
+            </a>
+
+            <span class="animate" style="--i:5;"></span>
+
+        </div>
+
+    </div>
+    <div class="home-imgHover"><span class="animate" style="--i:6;"></span></div>
+
+
+</section>
+
+<section style="background-color: rgb(21, 65, 72);" class=" MealPlanner" id="MealPlanner">
+    <div class="container">
+        <h1>MEAL PLANNER</h1>
+        <p style="color: rgb(31, 121, 115); margin-bottom: 10px;">Meet our AI-powered Professional Meal Planner!
+            Tailored
+            to your daily calorie
+            goals, this streamlined tool simplifies nutrition planning. Just set your calorie target, and effortlessly
+            receive personalized meal suggestions. Elevate your meal planning with ease and precision.</p>
+        <form class="form-main" action="/plan_meal" method="post">
+            <label for="calories">Calories:</label>
+            <input type="number" id="calories" name="calories" required>
+
+            <label for="num_items">Number of Meals:</label>
+            <select id="num_items" name="num_items">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+
+            <input type="submit" value="Plan Meal">
+            <!-- <a href="/" class="return-button">Return</a> -->
+        </form>
+        <p style="color: rgb(8, 181, 181);">Discover precision with our <span> <a style="color: aquamarine;"
+                    href="/food_calorie_counter">Pro
+                    Calorie Counter</a></span>! Unsure about your meal's
+            calories? Use
+            our tool for accurate
+            counts. Elevate your nutrition with ease.</p>
+        <div class="meal-plan">
+            <!-- {% if recommended_foods %}
+            <h2>MEAL PLAN</h2>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Serving</th>
+                    <th>Calories</th>
+                </tr>
+                {% for food in recommended_foods %}
+                <tr>
+                    <td>{{ food['name'] }}</td>
+                    <td>{{ food['serving'] }}</td>
+                    <td>{{ food['calories'] }} cal</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+
+            <h2>Total Calories</h2>
+            <p id="total-calories">{{ total_calories }} cal</p>
+            {% endif %} -->
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script src="//code.tidio.co/ntk365ejgqbs9hkueaauhism8vzph2jv.js" async></script>
+
+
+</section>
+<section class="analytics" id="analytics">
+    {% include 'view_meal_logs.html' %}
+</section>
+<section style="background-color: rgb(21, 65, 72);" class="contact" id="contact">
+    <!-- Include your login and registration forms here -->
+    {% include 'contact.html' %}
+</section>
+<script src="/static/script.js"></script>
+<script src="//code.tidio.co/ntk365ejgqbs9hkueaauhism8vzph2jv.js" async></script>
+</body>
+
+</html>

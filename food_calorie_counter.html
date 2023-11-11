@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Calorie Counter</title>
+    <link rel="stylesheet" href="/static/food_calorie_counter.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Food Calorie Counter</h1>
+        <form action="/calculate" method="post">
+            <div class="form-group">
+                <label for="food">Food:</label>
+                <input type="text" name="food" id="foodInput" list="foodList">
+                <datalist id="foodList">
+                    {% for row in food_data %}
+                    <option value="{{ row['Food'] }}">
+                        {% endfor %}
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="serving">Serving:</label>
+                <select name="serving" id="serving"></select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Serving Count:</label>
+                <input type="number" name="quantity" id="quantity" value="1" min="1">
+                <a href="/" class="return-button">Return</a>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Calculate Calories">
+
+            </div>
+        </form>
+
+        <div id="result">
+            {% if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        function updateServingOptions() {
+            var food = document.getElementById('foodInput').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/get_serving_options', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var servingOptions = JSON.parse(xhr.responseText)['serving_options'];
+                    var servingSelect = document.getElementById('serving');
+                    servingSelect.innerHTML = '';
+                    servingOptions.forEach(function (option) {
+                        var optionElement = document.createElement('option');
+                        optionElement.value = option.trim();
+                        optionElement.textContent = option.trim();
+                        servingSelect.appendChild(optionElement);
+                    });
+                }
+            };
+            xhr.send('food=' + encodeURIComponent(food));
+        }
+
+        document.getElementById('foodInput').addEventListener('input', updateServingOptions);
+
+        function showResult(message) {
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>' + message + '</p>';
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

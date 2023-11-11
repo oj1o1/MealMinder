@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/login_register.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+
+    {% if error %}
+    <script>
+        alert('Wrong Password or username');
+    </script>
+    {% endif %}
+    <div class="container">
+        <div class="box">
+            <div class="box-login" id="login">
+                <div class="top-header">
+                    <h1>Login</h1>
+                </div>
+                <form method="POST" action="{{ url_for('login_register') }}">
+                    <div class="input-group">
+                        <div class="input-field">
+                            <input type="text" name="login_username" class="input-box" id="login_username" required>
+                            <label for="login_username">Email Address or Username</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="login_password" class="input-box" id="login_password" required>
+
+                            <label for="login_password">Password</label>
+                            <div class="eye-area">
+                                <div class="eye-box" onclick="myLogPassword()">
+                                    <i class='bx bx-show' id="eye"></i>
+                                    <i class='bx bx-hide' id="eye-slash"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="remember">
+                            <input type="checkbox" name="formCheck" id="formCheck" class="check">
+                            <label for="formCheck">Remember Me</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" class="input-submit" value="Sign In">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="box-register" id="register">
+                <div class="top-header">
+                    <h1>Sign Up, Now</h1>
+                </div>
+                <form method="POST" action="{{ url_for('login_register') }}">
+                    <div class="input-group">
+                        <div class="input-field">
+                            <input type="text" name="register_username" class="input-box" id="register_username"
+                                required>
+                            <label for="register_username">Username</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="register_email" class="input-box" id="register_email" required>
+                            <label for="register_email">Email Address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="register_password" class="input-box" id="register_password"
+                                required>
+                            <label for="register_password">Password</label>
+                            <div class="eye-area">
+                                <div class="eye-box" onclick="myRegPassword()">
+                                    <i class='bx bx-show' id="eye-2"></i>
+                                    <i class='bx bx-hide' id="eye-slash-2"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" class="input-submit" value="Sign Up">
+                        </div>
+
+
+                    </div>
+                </form>
+
+
+
+
+            </div>
+
+
+            <div class="switch">
+                <a href="#" class="login" onclick="login()">Login</a>
+                <a href="#" class="register" onclick="register()">Register</a>
+                <div class="btn-active" id="btn"></div>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById('login');
+            var y = document.getElementById('register');
+            var z = document.getElementById('btn');
+            function login() {
+                x.style.left = '27px';
+                y.style.left = '360px';
+                z.style.left = '0px';
+            }
+            function register() {
+                x.style.left = '-360px';
+                y.style.left = '25px';
+                z.style.left = '150px';
+            }
+
+
+            function myLogPassword() {
+                var a = document.getElementById('login_password');
+                var b = document.getElementById('eye');
+                var c = document.getElementById('eye-slash');
+
+                if (a.type === 'password') {
+                    a.type = 'text';
+                    b.style.opacity = '0';
+                    c.style.opacity = '1';
+                }
+                else {
+                    a.type = 'password'
+                    b.style.opacity = '1';
+                    c.style.opacity = '0';
+                }
+            }
+            function myRegPassword() {
+                var d = document.getElementById('register_password');
+                var b = document.getElementById('eye-2');
+                var c = document.getElementById('eye-slash-2');
+
+                if (d.type === 'password') {
+                    d.type = 'text';
+                    b.style.opacity = '0';
+                    c.style.opacity = '1';
+                }
+                else {
+                    d.type = 'password'
+                    b.style.opacity = '1';
+                    c.style.opacity = '0';
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

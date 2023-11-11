@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.MealPlanner {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(10, 37, 41);
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url('/static/1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat; */
+}
+
+.MealPlanner .container {
+    font-size: 15px;
+    background-color: rgb(16, 47, 54);
+    padding: 50px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 70%;
+    animation: containerAnimation 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(75px);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    /* Add animation to the container */
+}
+
+.MealPlanner input:focus {
+    outline: none;
+}
+
+.MealPlanner h1 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 3rem;
+    color: aqua;
+    text-shadow: 0 0 5px cyan, 0 0 20px cyan;
+    animation: glowing 2s linear infinite;
+
+}
+
+/* Apply 3D effect to input and select elements */
+
+@keyframes glowing {
+    0% {
+        text-shadow: 0 0 5px cyan, 0 0 20px cyan;
+    }
+
+    50% {
+        text-shadow: 0 0 10px cyan, 0 0 30px cyan;
+    }
+
+    100% {
+        text-shadow: 0 0 5px cyan, 0 0 20px cyan;
+    }
+}
+
+.MealPlanner h2,
+.MealPlanner p {
+    color: rgb(33, 123, 138);
+}
+
+.MealPlanner p {
+    color: rgb(78, 147, 10);
+}
+
+.MealPlanner form,
+.MealPlanner label,
+.MealPlanner input,
+.MealPlanner select {
+    color: #fff;
+    margin-bottom: 15px;
+    /* Increase margin */
+    width: 100%;
+    /* Make inputs and selects full width */
+    max-width: 300px;
+    /* Limit max width */
+}
+
+.MealPlanner input {
+    width: 200px;
+}
+
+.MealPlanner select {
+    width: 123px;
+}
+
+.MealPlanner table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #fff;
+    animation: tableAnimation 1s ease-in-out;
+    border: 1px solid #333;
+    /* Add border for 3D effect */
+    border-radius: 10px;
+    /* Round the corners */
+    overflow: hidden;
+    /* Hide overflow for rounded corners */
+}
+
+.MealPlanner th,
+.MealPlanner td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    /* Add border between rows */
+}
+
+.MealPlanner th {
+    background-color: #222;
+    font-weight: bold;
+    border-right: 1px solid #333;
+    /* Add border between columns */
+}
+
+.MealPlanner tr {
+    animation: tableContentAnimation 1s ease-in-out;
+    transition: background 0.3s;
+    /* Add transition for hover effect */
+}
+
+.MealPlanner tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+    /* Add hover effect */
+}
+
+.MealPlanner ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.MealPlanner li {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.MealPlanner input[type="number"],
+.MealPlanner select {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+.MealPlanner .return-button {
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF;
+    /* Set the background color */
+    color: #ffffff;
+    /* Set the text color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    /* Adjust the spacing from the "Plan Meal" button */
+}
+
+.MealPlanner .return-button:hover {
+    margin-left: 10px;
+    background-color: #007BFF;
+    box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF, 0 0 25px #007BFF;
+    /* Change color on hover */
+}
+
+.MealPlanner input[type="submit"] {
+    background-color: #ff5733;
+    box-shadow: 0 0 5px #ff5733, 0 0 20px #ff5733;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.MealPlanner input[type="submit"]:hover {
+    background-color: #ff4223;
+}
+
+@keyframes containerAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tableAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tableContentAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .MealPlanner .container {
+        padding: 50px;
+        /* Reduce padding */
+    }
+
+    .MealPlanner input[type="number"],
+    .MealPlanner select {
+        width: 100%;
+        /* Make inputs and selects full width */
+        max-width: none;
+        /* Remove max-width */
+    }
+
+    .MealPlanner input {
+        width: 100%;
+        /* Make input full width */
+    }
+
+    .MealPlanner select {
+        width: 100%;
+        /* Make select full width */
+    }
+}
+
+/* For screens between 601px and 900px wide */
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .MealPlanner input[type="number"],
+    .MealPlanner select {
+        width: 70%;
+        /* Reduce width */
+    }
+}

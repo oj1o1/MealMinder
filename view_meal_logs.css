@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Analytics {
+    background: rgb(10, 37, 41);
+}
+
+.Analytics h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    color: yellowgreen;
+    animation: neonGlow 2s infinite;
+
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px yellowgreen, 0 0 20px yellowgreen, 0 0 30px yellowgreen;
+    }
+
+    50% {
+        text-shadow: 0 0 10px yellowgreen, 0 0 20px yellowgreen, 0 0 30px yellowgreen;
+    }
+
+    100% {
+        text-shadow: 0 0 5px yellowgreen, 0 0 20px yellowgreen, 0 0 30px yellowgreen;
+    }
+}
+
+.Analytics table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid rgb(10, 37, 41);
+    color: #fff;
+    background-color: rgba(10, 37, 41, 0.8);
+    /* Changed background color with transparency */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Added box shadow for 3D effect */
+}
+
+.return-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF;
+    /* Set the background color */
+    color: #ffffff;
+    /* Set the text color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    /* Adjust the spacing from the "Plan Meal" button */
+}
+
+.return-button:hover {
+    margin-left: 10px;
+    background-color: #007BFF;
+    box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF, 0 0 25px #007BFF;
+    /* Change color on hover */
+}
+
+.Analytics th,
+.Analytics td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid rgb(10, 37, 41);
+}
+
+.Analytics .chart-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.Analytics .chart-box {
+    width: 45%;
+    /* Adjusted size */
+    background-color: rgb(10, 37, 41);
+    padding: 20px;
+    border: 2px solid rgb(10, 37, 41);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Added box shadow for 3D effect */
+}
+
+/* Adjust label color for better visibility */
+.Analytics .chart-container .chart-box .chartjs-render-monitor .chartjs-tooltips,
+.Analytics .chart-container .chart-box .chartjs-render-monitor .chartjs-tooltips>div {
+    color: #fff !important;
+}

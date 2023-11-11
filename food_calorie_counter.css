@@ -1,0 +1,206 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styles */
+body {
+    background-color: rgb(10, 37, 41);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(10, 37, 41, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Header styles */
+h1 {
+    font-size: 28px;
+    margin-top: 0;
+    position: relative;
+    animation: neonGlow 2s infinite;
+    text-transform: uppercase;
+    color: yellowgreen;
+}
+
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px yellowgreen, 0 0 20px yellowgreen, 0 0 30px yellowgreen;
+    }
+
+    50% {
+        text-shadow: 0 0 10px yellowgreen, 0 0 40px yellowgreen, 0 0 60px yellowgreen;
+    }
+
+    100% {
+        text-shadow: 0 0 5px yellowgreen, 0 0 20px yellowgreen, 0 0 30px yellowgreen;
+    }
+}
+
+/* Form styles */
+.form-group {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.return-button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF;
+    /* Set the background color */
+    color: #ffffff;
+    /* Set the text color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    /* Adjust the spacing from the "Plan Meal" button */
+}
+
+.return-button:hover {
+    margin-left: 10px;
+    background-color: #007BFF;
+    box-shadow: 0 0 5px #007BFF, 0 0 20px #007BFF, 0 0 25px #007BFF;
+    /* Change color on hover */
+}
+
+/* Input and Select styles */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+/* Button styles */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: yellowgreen;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: neonGlowButton 2s infinite;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(128, 170, 44);
+}
+
+input[type="submit"]::before {
+    content: "";
+    background-color: #00ffff;
+    border-radius: 50%;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes neonGlowButton {
+    0% {
+        box-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 15px yellowgreen;
+    }
+
+    50% {
+        box-shadow: 0 0 6px yellowgreen, 0 0 14px yellowgreen, 0 0 24px yellowgreen;
+    }
+
+    100% {
+        box-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 15px yellowgreen;
+    }
+}
+
+/* Result styles */
+#result {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeIn 1s;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* style.css */
+
+/* ... (previous styles) ... */
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 60%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="submit"] {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="submit"] {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .container {
+        max-width: 80%;
+    }
+
+}
