@@ -40,7 +40,10 @@ guides them in achieving these goals through personalized meal plans
 # Output 
 ![image](https://github.com/oj1o1/MealMinder/assets/122396350/4440d214-97b5-4424-9540-ce71132f3e03)
 ![image](https://github.com/oj1o1/MealMinder/assets/122396350/90594756-e7eb-40e1-b199-f4b70ff8b8ff)
-
+![image](https://github.com/oj1o1/MealMinder/assets/122396350/3e9cd6b1-5224-4bb8-8bfb-f74a5fa844b2)
+![image](https://github.com/oj1o1/MealMinder/assets/122396350/583a2156-95f6-4079-a512-67dff3f52439)
+![image](https://github.com/oj1o1/MealMinder/assets/122396350/da7d2b13-3235-4683-94ca-c93c3b679f67)
+![image](https://github.com/oj1o1/MealMinder/assets/122396350/ff2abd8a-442b-4ddf-b30f-047caefe54c1)
 
 
 
